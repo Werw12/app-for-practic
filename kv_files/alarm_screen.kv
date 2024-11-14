@@ -1,0 +1,24 @@
+# kv_files/alarm_screen.kv
+<AlarmScreen>:
+    BoxLayout:
+        orientation: 'vertical'
+        padding: 10
+        spacing: 10
+        ClockWidget:
+            size_hint: (1, 0.3)
+            center: self.center
+            radius: min(self.width, self.height) / 2 - 10
+        Label:
+            text: "Будильник для перерв"
+            font_size: 24
+            color: 0, 0, 0, 1
+        Button:
+            text: "Запустити будильник кожні 3 години"
+            background_color: 0.2, 0.6, 0.8, 1
+            on_release:
+                root.on_enter()
+        Button:
+            text: "Назад"
+            background_color: 0.2, 0.6, 0.8, 1
+            on_release:
+                app.root.current = 'home'

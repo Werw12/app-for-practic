@@ -1,0 +1,82 @@
+<HomeScreen>:
+    canvas.before:
+        Color:
+            rgba: 0.1, 0.1, 0.1, 1  # Темний фон для сучасного вигляду
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
+    BoxLayout:
+        orientation: 'vertical'
+        padding: [20, 30]
+        spacing: 15
+
+        Label:
+            text: "Вітаємо! Це ваш додаток для нагадувань"
+            font_size: 32
+            color: 1, 1, 1, 1
+            bold: True
+            halign: 'center'
+            valign: 'middle'
+            size_hint_y: 0.3
+            text_size: self.width, None
+
+        Button:
+            text: "Перейти до будильника"
+            font_size: 20
+            size_hint_y: None
+            height: 60
+            background_color: 0.2, 0.6, 0.8, 1
+            color: 1, 1, 1, 1
+            on_release:
+                app.root.current = 'alarm'
+            on_press: self.background_color = 0.1, 0.5, 0.7, 1  # Зміна кольору при натисканні
+            on_release: self.background_color = 0.2, 0.6, 0.8, 1  # Повернення до початкового кольору
+            canvas.before:
+                Color:
+                    rgba: self.background_color
+                RoundedRectangle:
+                    pos: self.pos
+                    size: self.size
+                    radius: [20]
+
+        Button:
+            text: "Налаштування"
+            font_size: 20
+            size_hint_y: None
+            height: 60
+            background_color: 0.2, 0.6, 0.8, 1
+            color: 1, 1, 1, 1
+            on_release:
+                app.root.current = 'settings'
+            on_press: self.background_color = 0.1, 0.5, 0.7, 1
+            on_release: self.background_color = 0.2, 0.6, 0.8, 1
+            canvas.before:
+                Color:
+                    rgba: self.background_color
+                RoundedRectangle:
+                    pos: self.pos
+                    size: self.size
+                    radius: [20]
+
+        Button:
+            text: "Годинник"
+            font_size: 20
+            size_hint_y: None
+            height: 60
+            background_color: 0.2, 0.6, 0.8, 1
+            color: 1, 1, 1, 1
+            on_release:
+                app.root.current = 'clock'
+            on_press: self.background_color = 0.1, 0.5, 0.7, 1
+            on_release: self.background_color = 0.2, 0.6, 0.8, 1
+            canvas.before:
+                Color:
+                    rgba: self.background_color
+                RoundedRectangle:
+                    pos: self.pos
+                    size: self.size
+                    radius: [20]
+
+        Widget:
+            size_hint_y: 0.2

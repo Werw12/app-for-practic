@@ -1,0 +1,10 @@
+# kv_files/settings_screen.kv
+<SettingsScreen>:
+    BoxLayout:
+        orientation: 'vertical'
+        Label:
+            text: "Налаштування додатка"
+        Button:
+            text: "Назад"
+            on_release:
+                app.root.current = 'home'
